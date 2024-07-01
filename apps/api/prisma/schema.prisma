@@ -22,11 +22,25 @@ model Sample {
 
 model User {
   id        Int      @id @default(autoincrement())
-  userName  String
+  userName  String   @unique
   email     String
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("users")
+}
+
+model About {
+  id          Int      @id @default(autoincrement())
+  thumbnail   String
+  displayName String
+  gender      String
+  birthday    String
+  horoscope   String
+  zodiac      String
+  height      String
+  weight      String
+
+  @@map("abouts")
 }
